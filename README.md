@@ -1,78 +1,88 @@
-# The ingestion
+# The Ingestion - Smartia Backend Developer Challenge
+
+This repository contains the Smartia backend challenge, as well as instructions for setting up the environment.
 
 ## Setup
-We provide a one-button setup using vagrant and virtualbox which you are more
-than welcome to use. If you prefer to use some manually set environment, go for
-it, but this is similar to how we maintain integrity between local dev
-environments and production down here at Smartia. Having that integrity is
-of extreme importance for us, as often the environment involves a mixture
-of less-tha-popular technology, maintaining of which manually is unreasonable.
+We provide a one-button setup using Vagrant and Virtualbox, which you are encouraged to use. You are
+welcome to manually setup your environment if you prefer, but the Vagrant setup is similar to how we 
+maintain integrity between local dev
+and production environments here at Smartia. Having that integrity is
+extremely important to us, as often the environment involves a mixture
+of niche technology, maintaining of which manually is unreasonable.
 
 ### Vagrant
-1. Get [vagrant](https://www.vagrantup.com/) and 
-[virtualbox](https://www.virtualbox.org/wiki/Downloads)
-2. Steer into project directory and issue `vagrant up`
-3. When the command is done, you are ready to go. You can either use [vagrant
-box with pycharm](https://www.jetbrains.com/help/pycharm/vagrant-support.html)
+1. Install [Vagrant](https://www.vagrantup.com/) and 
+[Virtualbox](https://www.virtualbox.org/wiki/Downloads)
+2. Navigate into the project directory and run `vagrant up`
+3. When the command is done, you are ready to go. You can either use [Vagrant
+boxes with PyCharm](https://www.jetbrains.com/help/pycharm/vagrant-support.html)
 which is akin to how we work, or `vagrant ssh` to work in the remote box
 console. The choice is yours!
 
-### Non-vagrant
-Check Setup section, content of `Vagrantfile` and good luck.
+### Non-Vagrant
+Check Setup section, and the content of `Vagrantfile` and good luck.
 
-## Your task
+## Your Task
 
 ### Description
-One of our employees just finished a tough period of integrating with two
-external services, one that provides us with data from factory, and the other
-a proprietary time series database. It is now a working solution, but also not
-the prettiest, sitting alone in `ingest.py`, completely away from out Django
-stack. Even the barely some tests we started to prepare in `features` following
+One of our employees just finished a tough period of integration with two
+external services; one of which provides us with data from factory, and the 
+other is a proprietary time series database. 
+
+It is a working solution, but not the prettiest, sitting alone in `ingest.py`
+, completely away from our Django stack. 
+Even the barely some tests we started to prepare in `features` following
 our favorite [BDD convention](https://behave.readthedocs.io/en/latest/) are
 not even started to be implemented yet, or cover all the scenarios right now.
 
-The reason for integration with django is because that is where we keep all our
-data infrastructure and pipelines, it serves as focal point of our ecosystem,
+
+The reason for the integration with Django is that Django is where we keep all of our
+data infrastructure and pipelines. It serves as focal point of our ecosystem,
 and right now we have no plans to get away from it. We didn't include code for
-that in the test as it's simply not needed. Just assume that this is quite
-big django project already.
+that in the test as it is simply not needed. Just assume that this is a
+big Django project already.
 
-### Your task - the required code part
-As part of this task we have one hard requirement - we want you to convert the
-`ingest.py` into a Django command. A simple task, and very simple test for
-someone who has done it previously with django. That's all the code you are
-required to do for this task.
+### The Required Code Part
+For the code part of this task we have one requirement: we want you to convert the
+`ingest.py` file into a Django command. A simple task, and a very simple test for
+someone who has done similar work previously with Django. That is all the code you are
+required to write for this challenge.
 
-### Your task - the fun part
-Now with the ingestion moved as django command, we need to whip this repository
-into shape. Of course we don't expect you to actually implement that, there
-is so much work to be done here - from automating the vagrant file further
-(and possibly putting it into ansibles), expanding `.feature` files to cover
-all sort of scenario, much more robust django setup with logging, error
+### The Fun Part
+Now with the ingestion moved to a Django command, we need to whip this repository
+into shape. Of course, we don't expect you to actually implement that, there
+is so much work to be done here - from automating the Vagrant file further
+(and possibly putting it into Ansible Playbooks), expanding `.feature` files to cover
+all sorts of scenarios, to make the Django setup much more robust with logging, error
 reporting and parallelization (one way or another, we will need the ingestion
 code to scale both up-ways and side-ways) that asking you to implement even
 one of those would be unfair. So we are not going to do that.
 
-Instead we want you to prepare a short presentation on how, given ownership of
-this product you would take it from where it's now to a production grade system,
+Instead, we want you to prepare a short presentation on how, given ownership of
+this product, you would take it from where it is now to a production grade system,
 ready and willing to process data in micro and macro scale. You can prepare this
-presentation as psudo code, diagram, pps, sharpie notes on your hand - it does
-not matter as you will be the one giving the presentation during the code 
-review! Don't make it too long too, stick to key points, just like you were
-presenting a battle plan to a CTO in a small company. And be prepared to have
-the presentation interrupted with question, best to keep it in conversational
+presentation as pseudocode, diagrams, slides, Sharpie notes written on your hand - it 
+does not matter as you will be the one giving the presentation during the code 
+review! 
+Don't make it too long, stick to key points, just like you were
+presenting a battle plan to a CTO in a small company. Finally, be prepared to have
+the presentation interrupted with questions, feel free to keep it in a conversational
 format, as this is more of a discussion rather than an academic presentation.
 
 ## Final notes
-This is a task taken directly from our pipeline just few weeks ago (obviously
-simplified, but the core of issue remains) and we cannot wait to hear your 
-thoughts on how to solve it! Please do not spent more than 2-3 hours preparing,
-it will not net you extra points, and we do not want you to spend enormous
-amount of time on throw-away test. Our primary focus is to verify that you do
-know how to code, and think like a product owner, who will ultimately have to
-deliver and be responsible for the delivery.
+This is a task taken directly from our pipeline just few weeks ago (albeit
+simplified, but the core of the issue remains). We cannot wait to hear your 
+thoughts on how to solve it! 
 
-We hope that you will have fun with it! Once you are ready, submit a pull 
-request with your solution and shoot us an email at jobs@smartia.tech with a
-link to your pull request and copy of CV. We will then try to schedule a call
-with you as soon as we receive it, and we will review the work together.
+Please don't spend more than 2-3 hours preparing, it will not net you extra points, 
+and we do not want you to spend enormous amounts of time on a throw-away test. 
+Our primary focus is to verify that you do know how to code, and think like a product
+owner, who will ultimately have to deliver and be responsible for the delivery.
+
+### Submission
+Once you are ready, submit a pull-request with your solution and shoot us an email at 
+`jobs@smartia.tech` with a link to your pull-request and copy of your up-to-date CV. We
+will then try to schedule a call with you as soon as we receive it, and we will review
+the work together.
+
+We hope that you will have fun with it! 
