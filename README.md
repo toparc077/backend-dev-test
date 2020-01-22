@@ -29,12 +29,10 @@ One of our employees just finished a tough period of integration with two
 external services; one of which provides us with data from factory, and the 
 other is a proprietary time series database. 
 
-It is a working solution, but not the prettiest, sitting alone in `ingest.py`
-, completely away from our Django stack. 
-Even the barely some tests we started to prepare in `features` following
-our favorite [BDD convention](https://behave.readthedocs.io/en/latest/) are
-not even started to be implemented yet, or cover all the scenarios right now.
-
+It is a working solution, but not the prettiest, sitting alone in `ingest.py`, 
+completely away from our Django stack. We started to prepare tests in `features` 
+following our favorite [BDD convention](https://behave.readthedocs.io/en/latest/). 
+They are not implemented yet and they do not cover all the scenarios right now.
 
 The reason for the integration with Django is that Django is where we keep all of our
 data infrastructure and pipelines. It serves as focal point of our ecosystem,
