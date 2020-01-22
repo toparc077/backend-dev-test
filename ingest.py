@@ -5,7 +5,7 @@ import redis
 
 def get_message_from_edge() -> dict:
     """
-    Retuns data from super complex undocumented system. Consider it
+    Returns data from super complex undocumented system. Consider it
     non mutable (you can rename it, move it, but don't change the contents).
     :return: json converted to dictionary
     """
@@ -14,7 +14,7 @@ def get_message_from_edge() -> dict:
 
 def store_message_in_database(timestamp: str, message: str) -> bool:
     """
-    Stores given CSV string in propriateary database. Consider it non mutable
+    Stores given CSV string in proprietary database. Consider it non mutable
     (you can rename it, move it, but don't change the contents).
     :param timestamp: Datetime in format: "2020-01-21T09:32:34" as string
     :param message: CSV represented as string
