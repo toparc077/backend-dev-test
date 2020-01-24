@@ -59,7 +59,7 @@ one of those would be unfair. So we are not going to do that.
 Instead, we want you to prepare a short presentation on how, given ownership of
 this product, you would take it from where it is now to a production grade system,
 ready and willing to process data in micro and macro scale. You can prepare this
-presentation as pseudocode, diagrams, slides, Sharpie notes written on your hand - it 
+presentation as pseudocode, diagrams, slides, sharpie notes written on your hand - it 
 does not matter as you will be the one giving the presentation during the code 
 review! 
 Don't make it too long, stick to key points, just like you were
