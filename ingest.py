@@ -1,7 +1,6 @@
 import json
-
 import redis
-
+import time
 
 def get_message_from_edge() -> dict:
     """
@@ -9,7 +8,7 @@ def get_message_from_edge() -> dict:
     non mutable (you can rename it, move it, but don't change the contents).
     :return: json converted to dictionary
     """
-    return json.load(open("example.json"))
+    yield json.load(open("example.json"))
 
 
 def store_message_in_database(timestamp: str, message: str) -> bool:
@@ -20,19 +19,20 @@ def store_message_in_database(timestamp: str, message: str) -> bool:
     :param message: CSV represented as string
     :return: boolean result of the call
     """
+    time.sleep(0.5)
     r = redis.Redis()
     r.set(timestamp, message)
 
 
 if __name__ == "__main__":
-    message = get_message_from_edge()
-    values = message["Values"]
-    csv_message = "%s,%s,%s,%s,%s,%s" % (
-        values["FACTORY"],
-        values["ZONE"],
-        values["CELL"],
-        values["MACHINE_GROUP"],
-        values["MACHINE"],
-        values["MACHINE_ID"],
-    )
-    store_message_in_database(values["TIMESTAMP"], csv_message)
+    for message in get_message_from_edge():
+        values = message["Values"]
+        csv_message = "%s,%s,%s,%s,%s,%s" % (
+            values["FACTORY"],
+            values["ZONE"],
+            values["CELL"],
+            values["MACHINE_GROUP"],
+            values["MACHINE"],
+            values["MACHINE_ID"],
+        )
+        store_message_in_database(values["TIMESTAMP"], csv_message)
