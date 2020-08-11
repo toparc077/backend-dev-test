@@ -80,8 +80,10 @@ owner, who will ultimately have to deliver and be responsible for the delivery.
 ### Submission
 Once you are ready, submit a pull-request with your solution and shoot us an email at 
 `jobs@smartia.tech` with a link to your pull-request and copy of your up-to-date CV. 
-We will then schedule a call with You as soon as we receive it so you can present your 
+We will then schedule a call with You as soon as we receive it to present your 
 solution (this call usually lasts about 1-2 hours, as we want to get to know one 
-another well). We hope that you will have fun and can’t wait to speak with you soon!
+another well). **If you have submitted a PR with a solution to the task, you will be 
+invited for the call** as we believe that it’s only fair to put in the same amount of 
+time as do the candidates.
 
 We hope that you will have fun with it! 
